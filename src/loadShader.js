@@ -52,7 +52,7 @@ const duplicatedChunks = new Map();
  * `#include` preprocessor instruction
  */
 // const include = /#include(\s+([^\s<>]+));?/gi;
-const include = /#include\s+"([^"]+)";?/gi;
+const include = /#include(\s+"([^\s"<>]+))";?/gi;
 
 /**
  * @function
