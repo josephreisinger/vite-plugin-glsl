@@ -261,6 +261,11 @@ function loadChunks(source, path, extension, warn, root) {
     return recursiveChunk;
   }
 
+  // Don't include duplicated chunks
+  if (allChunks.has(unixPath)) {
+    return recursiveChunk;
+  }
+
   source = removeSourceComments(source);
   let directory = dirname(unixPath);
   allChunks.add(unixPath);
